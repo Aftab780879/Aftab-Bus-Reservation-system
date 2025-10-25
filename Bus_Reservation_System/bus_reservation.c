@@ -13,7 +13,7 @@ int Login_Menu(int login_choise)
 
 int User_Menu(int user_menu_choise)
 {
-    printf("\n==== USER MENU ====\n");
+    printf("\n\n==== USER MENU ====\n");
     printf("1.Book a Ticket\n");
     printf("2.Cancel a Ticket\n");
     printf("3.Check Bus Status\n");
@@ -50,6 +50,7 @@ int main()
     int bus_choise;
     int bus_capacity[3]={50,50,50};
     int book_tickets;
+    int cancel_tickets;
 
     printf("@@@****  BUS RESERVATION  ****@@@\n\n");
     while (1)
@@ -128,10 +129,40 @@ int main()
                                     bus_capacity[2]=bus_capacity[2]-book_tickets;
                                     printf("\nYour %d Tickets are Booked on Bus Number 333",book_tickets);
                                 }
+                                else
+                                {
+                                    printf("It is an Invalid Bus Number");
+                                }
                              
                             }
                             else if (user_menu_choise == 2)
                             {
+                                bus_choise = Bus_choise(bus_choise);
+                                if(bus_choise==111)
+                                {
+                                    printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                                    scanf("%d",&cancel_tickets);
+                                    bus_capacity[0]=bus_capacity[0]+cancel_tickets;
+                                    printf("\nYour %d Tickets are Cancelled on Bus Number 111",cancel_tickets);
+                                }
+                                else if(bus_choise==222)
+                                {
+                                    printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                                    scanf("%d",&cancel_tickets);
+                                    bus_capacity[1]=bus_capacity[1]+cancel_tickets;
+                                    printf("\nYour %d Tickets are Cancelled on Bus Number 222",cancel_tickets);
+                                }
+                                else if(bus_choise==333)
+                                {
+                                    printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                                    scanf("%d",&cancel_tickets);
+                                    bus_capacity[2]=bus_capacity[2]+cancel_tickets;
+                                    printf("\nYour %d Tickets are Cancelled on Bus Number 333",cancel_tickets);
+                                }
+                                else
+                                {
+                                    printf("It is an Invalid Bus Number");
+                                }
 
                             }
                             else if (user_menu_choise == 3)
@@ -141,19 +172,23 @@ int main()
                                 {
                                     printf("Status of bus Delhi to Mumbai\n");
                                     printf("Total capacity: 50\n");
-                                    printf("Available Seats :%d",bus_capacity[0]);
+                                    printf("Available Seats :%d\n",bus_capacity[0]);
                                 }
                                 else if(bus_choise==222)
                                 {
                                     printf("Status of bus Delhi to Shimla\n");
                                     printf("Total capacity: 50\n");
-                                    printf("Available Seats :%d",bus_capacity[1]);
+                                    printf("Available Seats :%d\n",bus_capacity[1]);
                                 }
                                 else if(bus_choise==333)
                                 {
                                     printf("Status of bus Delhi to Bihar\n");
                                     printf("Total capacity: 50\n");
-                                    printf("Available Seats :%d",bus_capacity[2]);
+                                    printf("Available Seats :%d\n",bus_capacity[2]);
+                                }
+                                else
+                                {
+                                    printf("It is an Invalid Bus Number");
                                 }
 
                             }
