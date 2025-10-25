@@ -26,13 +26,13 @@ int User_Menu(int user_menu_choise)
 int Bus_choise(int bus_choise)
 {
     printf("\n=====  Bus Option With Routes  =====\n");
-    printf("1.Delhi to Mumbai(101)\n");
-    printf("2.Delhi to Shimla(201)\n");
-    printf("3.Delhi to Bihar(301)\n");
-    printf("4.Delhi to Jodhpur(401)\n");
-    printf("5.Delhi to Ranchi(501)\n");
-    printf("6.Delhi to Aligarh(601)\n");
-    printf("Please Select Where you want To Go: ");
+    printf("Bus no 111.Delhi to Mumbai\n");
+    printf("Bus no 222.Delhi to Shimla\n");
+    printf("Bus no 333.Delhi to Bihar\n");
+    printf("Bus no 444.Delhi to Jodhpur\n");
+    printf("Bus no 555.Delhi to Ranchi\n");
+    printf("Bus no 666.Delhi to Aligarh\n");
+    printf("Please Enter the Bus number: ");
     scanf("%d", &bus_choise);
     return bus_choise;
 }
@@ -51,6 +51,8 @@ int main()
     int user_menu_choise;
     int number_found = 0;
     int bus_choise;
+    int bus_capacity[6]={50,50,50,50,50,50};
+    int book_tickets;
 
     printf("@@@****  BUS RESERVATION  ****@@@\n\n");
     while (1)
@@ -108,6 +110,15 @@ int main()
                             if (user_menu_choise == 1)
                             {
                                 bus_choise = Bus_choise(bus_choise);
+                                if(bus_choise==111)
+                                {
+                                    printf("Please Enter Number Of Tickets You Want to Book: ");
+                                    scanf("%d",&book_tickets);
+                                    bus_capacity[0]=bus_capacity[0]-book_tickets;
+                                    printf("Your %d Tickets are Booked on Bus Number 111",book_tickets);
+
+                                }
+                             
                             }
                             else if (user_menu_choise == 2)
                             {
@@ -115,7 +126,14 @@ int main()
                             }
                             else if (user_menu_choise == 3)
                             {
-                                
+                                bus_choise = Bus_choise(bus_choise);
+                                if(bus_choise==111)
+                                {
+                                    printf("Status of bus Delhi to Mumbai\n");
+                                    printf("Total capacity: 50\n");
+                                    printf("Available Seats :%d",bus_capacity[0]);
+                                }
+
                             }
                             else if (user_menu_choise == 4)
                             {
