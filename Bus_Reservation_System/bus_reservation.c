@@ -41,22 +41,43 @@ int Ticket_Booking(int bus_choise, int bus_capacity[], int book_tickets)
     {
         printf("\nPlease Enter Number Of Tickets You Want to Book: ");
         scanf("%d", &book_tickets);
+        if(book_tickets<=bus_capacity[0])
+        {
         bus_capacity[0] = bus_capacity[0] - book_tickets;
         printf("\nYour %d Tickets are Booked on Bus Number 111", book_tickets);
+        }
+        else
+        {
+            printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n",book_tickets);
+        }
     }
     else if (bus_choise == 222)
     {
         printf("\nPlease Enter Number Of Tickets You Want to Book: ");
         scanf("%d", &book_tickets);
+        if(book_tickets<=bus_capacity[1])
+        {
         bus_capacity[1] = bus_capacity[1] - book_tickets;
         printf("\nYour %d Tickets are Booked on Bus Number 222", book_tickets);
+        }
+        else
+        {
+            printf("\n%d tickets are not available on bus 222, Please check the bus status and try again\n",book_tickets);
+        }
     }
     else if (bus_choise == 333)
     {
         printf("\nPlease Enter Number Of Tickets You Want to Book: ");
         scanf("%d", &book_tickets);
+        if(book_tickets<=bus_capacity[2])
+        {
         bus_capacity[2] = bus_capacity[2] - book_tickets;
         printf("\nYour %d Tickets are Booked on Bus Number 333", book_tickets);
+        }
+        else
+        {
+            printf("\n%d tickets are not available on bus 333, Please check the bus status and try again\n",book_tickets);
+        }
     }
     else
     {
@@ -242,7 +263,7 @@ int main()
                 }
                 else if (number_found == 0)
                 {
-                    printf("\nNumber not registered . Please Register or Login Again");
+                    printf("\nNumber not registered . Please Register or Login Again\n");
                     break;
                 }
             }
