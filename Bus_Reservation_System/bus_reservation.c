@@ -140,24 +140,45 @@ int main()
                                 bus_choise = Bus_choise(bus_choise);
                                 if(bus_choise==111)
                                 {
+                                    if(bus_capacity[0]<50)
+                                    {
                                     printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
                                     scanf("%d",&cancel_tickets);
                                     bus_capacity[0]=bus_capacity[0]+cancel_tickets;
                                     printf("\nYour %d Tickets are Cancelled on Bus Number 111",cancel_tickets);
+                                    }
+                                    else
+                                    {
+                                        printf("You dont have any tickets to cancel");
+                                    }
                                 }
                                 else if(bus_choise==222)
                                 {
+                                    if(bus_capacity[1]<50)
+                                    {
                                     printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
                                     scanf("%d",&cancel_tickets);
                                     bus_capacity[1]=bus_capacity[1]+cancel_tickets;
                                     printf("\nYour %d Tickets are Cancelled on Bus Number 222",cancel_tickets);
+                                    }
+                                    else
+                                    {
+                                        printf("You dont have any tickets to cancel");
+                                    }
                                 }
                                 else if(bus_choise==333)
                                 {
+                                    if(bus_capacity[2]<50)
+                                    {
                                     printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
                                     scanf("%d",&cancel_tickets);
                                     bus_capacity[2]=bus_capacity[2]+cancel_tickets;
                                     printf("\nYour %d Tickets are Cancelled on Bus Number 333",cancel_tickets);
+                                    }
+                                    else
+                                    {
+                                        printf("You dont have any tickets to cancel");
+                                    }
                                 }
                                 else
                                 {
