@@ -63,7 +63,7 @@ int main()
             scanf(" %[^\n]", &full_name[full_name_count]);
             printf("Please Enter Your Phone Number: ");
             scanf("%d", &phone_number[full_name_count]);
-            printf("Please Enter a Password Within 10 Elements: ");
+            printf("Please Enter a 10  digit password (eg-Sidd@75896): ");
             scanf(" %[^\n]", &password[full_name_count]);
             printf("Please Re-Enter Your Password: ");
             scanf(" %[^\n]", &password_confirm[full_name_count]);
