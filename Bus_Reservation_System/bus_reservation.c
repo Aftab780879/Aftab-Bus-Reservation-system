@@ -34,6 +34,113 @@ int Bus_choise(int bus_choise)
     return bus_choise;
 }
 
+int Ticket_Booking(int bus_choise, int bus_capacity[], int book_tickets)
+{
+    bus_choise = Bus_choise(bus_choise);
+    if (bus_choise == 111)
+    {
+        printf("\nPlease Enter Number Of Tickets You Want to Book: ");
+        scanf("%d", &book_tickets);
+        bus_capacity[0] = bus_capacity[0] - book_tickets;
+        printf("\nYour %d Tickets are Booked on Bus Number 111", book_tickets);
+    }
+    else if (bus_choise == 222)
+    {
+        printf("\nPlease Enter Number Of Tickets You Want to Book: ");
+        scanf("%d", &book_tickets);
+        bus_capacity[1] = bus_capacity[1] - book_tickets;
+        printf("\nYour %d Tickets are Booked on Bus Number 222", book_tickets);
+    }
+    else if (bus_choise == 333)
+    {
+        printf("\nPlease Enter Number Of Tickets You Want to Book: ");
+        scanf("%d", &book_tickets);
+        bus_capacity[2] = bus_capacity[2] - book_tickets;
+        printf("\nYour %d Tickets are Booked on Bus Number 333", book_tickets);
+    }
+    else
+    {
+        printf("It is an Invalid Bus Number");
+    }
+}
+
+int Ticket_Cancellation(int bus_choise, int bus_capacity[], int cancel_tickets)
+{
+    bus_choise = Bus_choise(bus_choise);
+    if (bus_choise == 111)
+    {
+        if (bus_capacity[0] < 50)
+        {
+            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+            scanf("%d", &cancel_tickets);
+            bus_capacity[0] = bus_capacity[0] + cancel_tickets;
+            printf("\nYour %d Tickets are Cancelled on Bus Number 111", cancel_tickets);
+        }
+        else
+        {
+            printf("You dont have any tickets to cancel");
+        }
+    }
+    else if (bus_choise == 222)
+    {
+        if (bus_capacity[1] < 50)
+        {
+            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+            scanf("%d", &cancel_tickets);
+            bus_capacity[1] = bus_capacity[1] + cancel_tickets;
+            printf("\nYour %d Tickets are Cancelled on Bus Number 222", cancel_tickets);
+        }
+        else
+        {
+            printf("You dont have any tickets to cancel");
+        }
+    }
+    else if (bus_choise == 333)
+    {
+        if (bus_capacity[2] < 50)
+        {
+            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+            scanf("%d", &cancel_tickets);
+            bus_capacity[2] = bus_capacity[2] + cancel_tickets;
+            printf("\nYour %d Tickets are Cancelled on Bus Number 333", cancel_tickets);
+        }
+        else
+        {
+            printf("You dont have any tickets to cancel");
+        }
+    }
+    else
+    {
+        printf("It is an Invalid Bus Number");
+    }
+}
+int Bus_Status(int bus_choise, int bus_capacity[])
+{
+    bus_choise = Bus_choise(bus_choise);
+    if (bus_choise == 111)
+    {
+        printf("Status of bus Delhi to Mumbai\n");
+        printf("Total capacity: 50\n");
+        printf("Available Seats :%d\n", bus_capacity[0]);
+    }
+    else if (bus_choise == 222)
+    {
+        printf("Status of bus Delhi to Shimla\n");
+        printf("Total capacity: 50\n");
+        printf("Available Seats :%d\n", bus_capacity[1]);
+    }
+    else if (bus_choise == 333)
+    {
+        printf("Status of bus Delhi to Bihar\n");
+        printf("Total capacity: 50\n");
+        printf("Available Seats :%d\n", bus_capacity[2]);
+    }
+    else
+    {
+        printf("It is an Invalid Bus Number");
+    }
+}
+
 int main()
 {
     char full_name[20][50];
@@ -48,7 +155,7 @@ int main()
     int user_menu_choise;
     int number_found = 0;
     int bus_choise;
-    int bus_capacity[3]={50,50,50};
+    int bus_capacity[3] = {50, 50, 50};
     int book_tickets;
     int cancel_tickets;
 
@@ -107,111 +214,15 @@ int main()
                             user_menu_choise = User_Menu(user_menu_choise);
                             if (user_menu_choise == 1)
                             {
-                                bus_choise = Bus_choise(bus_choise);
-                                if(bus_choise==111)
-                                {
-                                    printf("\nPlease Enter Number Of Tickets You Want to Book: ");
-                                    scanf("%d",&book_tickets);
-                                    bus_capacity[0]=bus_capacity[0]-book_tickets;
-                                    printf("\nYour %d Tickets are Booked on Bus Number 111",book_tickets);
-                                }
-                                else if(bus_choise==222)
-                                {
-                                    printf("\nPlease Enter Number Of Tickets You Want to Book: ");
-                                    scanf("%d",&book_tickets);
-                                    bus_capacity[1]=bus_capacity[1]-book_tickets;
-                                    printf("\nYour %d Tickets are Booked on Bus Number 222",book_tickets);
-                                }
-                                else if(bus_choise==333)
-                                {
-                                    printf("\nPlease Enter Number Of Tickets You Want to Book: ");
-                                    scanf("%d",&book_tickets);
-                                    bus_capacity[2]=bus_capacity[2]-book_tickets;
-                                    printf("\nYour %d Tickets are Booked on Bus Number 333",book_tickets);
-                                }
-                                else
-                                {
-                                    printf("It is an Invalid Bus Number");
-                                }
-                             
+                                Ticket_Booking(bus_choise, bus_capacity, book_tickets);
                             }
                             else if (user_menu_choise == 2)
                             {
-                                bus_choise = Bus_choise(bus_choise);
-                                if(bus_choise==111)
-                                {
-                                    if(bus_capacity[0]<50)
-                                    {
-                                    printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-                                    scanf("%d",&cancel_tickets);
-                                    bus_capacity[0]=bus_capacity[0]+cancel_tickets;
-                                    printf("\nYour %d Tickets are Cancelled on Bus Number 111",cancel_tickets);
-                                    }
-                                    else
-                                    {
-                                        printf("You dont have any tickets to cancel");
-                                    }
-                                }
-                                else if(bus_choise==222)
-                                {
-                                    if(bus_capacity[1]<50)
-                                    {
-                                    printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-                                    scanf("%d",&cancel_tickets);
-                                    bus_capacity[1]=bus_capacity[1]+cancel_tickets;
-                                    printf("\nYour %d Tickets are Cancelled on Bus Number 222",cancel_tickets);
-                                    }
-                                    else
-                                    {
-                                        printf("You dont have any tickets to cancel");
-                                    }
-                                }
-                                else if(bus_choise==333)
-                                {
-                                    if(bus_capacity[2]<50)
-                                    {
-                                    printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-                                    scanf("%d",&cancel_tickets);
-                                    bus_capacity[2]=bus_capacity[2]+cancel_tickets;
-                                    printf("\nYour %d Tickets are Cancelled on Bus Number 333",cancel_tickets);
-                                    }
-                                    else
-                                    {
-                                        printf("You dont have any tickets to cancel");
-                                    }
-                                }
-                                else
-                                {
-                                    printf("It is an Invalid Bus Number");
-                                }
-
+                                Ticket_Cancellation(bus_choise, bus_capacity, cancel_tickets);
                             }
                             else if (user_menu_choise == 3)
                             {
-                                bus_choise = Bus_choise(bus_choise);
-                                if(bus_choise==111)
-                                {
-                                    printf("Status of bus Delhi to Mumbai\n");
-                                    printf("Total capacity: 50\n");
-                                    printf("Available Seats :%d\n",bus_capacity[0]);
-                                }
-                                else if(bus_choise==222)
-                                {
-                                    printf("Status of bus Delhi to Shimla\n");
-                                    printf("Total capacity: 50\n");
-                                    printf("Available Seats :%d\n",bus_capacity[1]);
-                                }
-                                else if(bus_choise==333)
-                                {
-                                    printf("Status of bus Delhi to Bihar\n");
-                                    printf("Total capacity: 50\n");
-                                    printf("Available Seats :%d\n",bus_capacity[2]);
-                                }
-                                else
-                                {
-                                    printf("It is an Invalid Bus Number");
-                                }
-
+                                Bus_Status(bus_choise, bus_capacity);
                             }
                             else if (user_menu_choise == 4)
                             {
