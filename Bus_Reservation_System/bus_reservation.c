@@ -34,7 +34,7 @@ int Bus_choise(int bus_choise)
     return bus_choise;
 }
 
-int Ticket_Booking(int bus_choise, int bus_capacity_sleeper[], int book_tickets,int bus_seat_type,int bus_capacity_sitting[])
+int Ticket_Booking(int bus_choise, int bus_capacity_sleeper[], int book_tickets, int bus_seat_type, int bus_capacity_sitting[])
 {
     bus_choise = Bus_choise(bus_choise);
     if (bus_choise == 111)
@@ -42,114 +42,111 @@ int Ticket_Booking(int bus_choise, int bus_capacity_sleeper[], int book_tickets,
         printf("\n1.Sleeper Seats- (FARE - 800)\n");
         printf("2.Sitting Seats- (FARE - 400)\n");
         printf("Please enter your choice:  ");
-        scanf("%d",&bus_seat_type);
-        if(bus_seat_type==1)
+        scanf("%d", &bus_seat_type);
+        if (bus_seat_type == 1)
         {
-        printf("\nPlease Enter Number Of Sleeper Tickets You Want to Book: ");
-        scanf("%d", &book_tickets);
-        if(book_tickets<=bus_capacity_sleeper[0])
-        {
-        bus_capacity_sleeper[0] = bus_capacity_sleeper[0] - book_tickets;
-        printf("\nTotal Fare : %d\n",800*book_tickets);
-        printf("\nYour %d Sleeper Tickets are Booked on Bus Number 111", book_tickets);
+            printf("\nPlease Enter Number Of Sleeper Tickets You Want to Book: ");
+            scanf("%d", &book_tickets);
+            if (book_tickets <= bus_capacity_sleeper[0])
+            {
+                bus_capacity_sleeper[0] = bus_capacity_sleeper[0] - book_tickets;
+                printf("\nTotal Fare : %d\n", 800 * book_tickets);
+                printf("\nYour %d Sleeper Tickets are Booked on Bus Number 111", book_tickets);
+            }
+            else
+            {
+                printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n", book_tickets);
+            }
         }
-        else
+        else if (bus_seat_type == 2)
         {
-            printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n",book_tickets);
+            printf("\nPlease Enter Number Of Sitting Tickets You Want to Book: ");
+            scanf("%d", &book_tickets);
+            if (book_tickets <= bus_capacity_sitting[0])
+            {
+                bus_capacity_sitting[0] = bus_capacity_sitting[0] - book_tickets;
+                printf("\nTotal Fare : %d\n", 400 * book_tickets);
+                printf("\nYour %d Sitting Tickets are Booked on Bus Number 111", book_tickets);
+            }
+            else
+            {
+                printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n", book_tickets);
+            }
         }
-    }
-    else if(bus_seat_type==2)
-    {
-        printf("\nPlease Enter Number Of Sitting Tickets You Want to Book: ");
-        scanf("%d", &book_tickets);
-        if(book_tickets<=bus_capacity_sitting[0])
-        {
-        bus_capacity_sitting[0] = bus_capacity_sitting[0] - book_tickets;
-        printf("\nTotal Fare : %d\n",400*book_tickets);
-        printf("\nYour %d Sitting Tickets are Booked on Bus Number 111", book_tickets);
-        }
-        else
-        {
-            printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n",book_tickets);
-        }
-
-    }
     }
     else if (bus_choise == 222)
     {
         printf("\n1.Sleeper Seats- (FARE - 800)\n");
         printf("2.Sitting Seats- (FARE - 400)\n");
         printf("Please enter your choice:  ");
-        scanf("%d",&bus_seat_type);
-        if(bus_seat_type==1)
+        scanf("%d", &bus_seat_type);
+        if (bus_seat_type == 1)
         {
-        printf("\nPlease Enter Number Of Tickets You Want to Book: ");
-        scanf("%d", &book_tickets);
-        if(book_tickets<=bus_capacity_sleeper[1])
-        {
-        bus_capacity_sleeper[1] = bus_capacity_sleeper[1] - book_tickets;
-        printf("\nTotal Fare : %d\n",800*book_tickets);
-        printf("\nYour %d Tickets are Booked on Bus Number 222", book_tickets);
+            printf("\nPlease Enter Number Of Tickets You Want to Book: ");
+            scanf("%d", &book_tickets);
+            if (book_tickets <= bus_capacity_sleeper[1])
+            {
+                bus_capacity_sleeper[1] = bus_capacity_sleeper[1] - book_tickets;
+                printf("\nTotal Fare : %d\n", 800 * book_tickets);
+                printf("\nYour %d Tickets are Booked on Bus Number 222", book_tickets);
+            }
+            else
+            {
+                printf("\n%d tickets are not available on bus 222, Please check the bus status and try again\n", book_tickets);
+            }
         }
-        else
+        else if (bus_seat_type == 2)
         {
-            printf("\n%d tickets are not available on bus 222, Please check the bus status and try again\n",book_tickets);
+            printf("\nPlease Enter Number Of Sitting Tickets You Want to Book: ");
+            scanf("%d", &book_tickets);
+            if (book_tickets <= bus_capacity_sitting[1])
+            {
+                bus_capacity_sitting[1] = bus_capacity_sitting[1] - book_tickets;
+                printf("\nTotal Fare : %d\n", 400 * book_tickets);
+                printf("\nYour %d Sitting Tickets are Booked on Bus Number 111", book_tickets);
+            }
+            else
+            {
+                printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n", book_tickets);
+            }
         }
-    }
-    else if(bus_seat_type==2)
-    {
-        printf("\nPlease Enter Number Of Sitting Tickets You Want to Book: ");
-        scanf("%d", &book_tickets);
-        if(book_tickets<=bus_capacity_sitting[1])
-        {
-        bus_capacity_sitting[1] = bus_capacity_sitting[1] - book_tickets;
-        printf("\nTotal Fare : %d\n",400*book_tickets);
-        printf("\nYour %d Sitting Tickets are Booked on Bus Number 111", book_tickets);
-        }
-        else
-        {
-            printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n",book_tickets);
-        }
-
-    }
     }
     else if (bus_choise == 333)
     {
         printf("\n1.Sleeper Seats- (FARE - 800)\n");
         printf("2.Sitting Seats- (FARE - 400)\n");
         printf("Please enter your choice:  ");
-        scanf("%d",&bus_seat_type);
-        if(bus_seat_type==1)
+        scanf("%d", &bus_seat_type);
+        if (bus_seat_type == 1)
         {
-        printf("\nPlease Enter Number Of Tickets You Want to Book: ");
-        scanf("%d", &book_tickets);
-        if(book_tickets<=bus_capacity_sleeper[2])
-        {
-        bus_capacity_sleeper[2] = bus_capacity_sleeper[2] - book_tickets;
-        printf("\nTotal Fare : %d\n",800*book_tickets);
-        printf("\nYour %d Tickets are Booked on Bus Number 333", book_tickets);
+            printf("\nPlease Enter Number Of Tickets You Want to Book: ");
+            scanf("%d", &book_tickets);
+            if (book_tickets <= bus_capacity_sleeper[2])
+            {
+                bus_capacity_sleeper[2] = bus_capacity_sleeper[2] - book_tickets;
+                printf("\nTotal Fare : %d\n", 800 * book_tickets);
+                printf("\nYour %d Tickets are Booked on Bus Number 333", book_tickets);
+            }
+            else
+            {
+                printf("\n%d tickets are not available on bus 333, Please check the bus status and try again\n", book_tickets);
+            }
         }
-        else
+        else if (bus_seat_type == 2)
         {
-            printf("\n%d tickets are not available on bus 333, Please check the bus status and try again\n",book_tickets);
+            printf("\nPlease Enter Number Of Sitting Tickets You Want to Book: ");
+            scanf("%d", &book_tickets);
+            if (book_tickets <= bus_capacity_sitting[2])
+            {
+                bus_capacity_sitting[2] = bus_capacity_sitting[2] - book_tickets;
+                printf("\nTotal Fare : %d\n", 400 * book_tickets);
+                printf("\nYour %d Sitting Tickets are Booked on Bus Number 111", book_tickets);
+            }
+            else
+            {
+                printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n", book_tickets);
+            }
         }
-    }
-    else if(bus_seat_type==2)
-    {
-        printf("\nPlease Enter Number Of Sitting Tickets You Want to Book: ");
-        scanf("%d", &book_tickets);
-        if(book_tickets<=bus_capacity_sitting[2])
-        {
-        bus_capacity_sitting[2] = bus_capacity_sitting[2] - book_tickets;
-        printf("\nTotal Fare : %d\n",400*book_tickets);
-        printf("\nYour %d Sitting Tickets are Booked on Bus Number 111", book_tickets);
-        }
-        else
-        {
-            printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n",book_tickets);
-        }
-
-    }
     }
     else
     {
@@ -157,7 +154,7 @@ int Ticket_Booking(int bus_choise, int bus_capacity_sleeper[], int book_tickets,
     }
 }
 
-int Ticket_Cancellation(int bus_choise, int bus_capacity_sleeper[], int cancel_tickets,int bus_seat_type,int bus_capacity_sitting[])
+int Ticket_Cancellation(int bus_choise, int bus_capacity_sleeper[], int cancel_tickets, int bus_seat_type, int bus_capacity_sitting[])
 {
     bus_choise = Bus_choise(bus_choise);
     if (bus_choise == 111)
@@ -165,117 +162,111 @@ int Ticket_Cancellation(int bus_choise, int bus_capacity_sleeper[], int cancel_t
         printf("\n1.Sleeper Seats- (FARE - 800)\n");
         printf("2.Sitting Seats- (FARE - 400)\n");
         printf("Please enter your choice:  ");
-        scanf("%d",&bus_seat_type);
-        if(bus_seat_type==1)
+        scanf("%d", &bus_seat_type);
+        if (bus_seat_type == 1)
         {
-        if (bus_capacity_sleeper[0] < 50)
-        {
-            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-            scanf("%d", &cancel_tickets);
-            bus_capacity_sleeper[0] = bus_capacity_sleeper[0] + cancel_tickets;
-            printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
-            printf("Total refund: %d",800*cancel_tickets);
-
+            if (bus_capacity_sleeper[0] < 50)
+            {
+                printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                scanf("%d", &cancel_tickets);
+                bus_capacity_sleeper[0] = bus_capacity_sleeper[0] + cancel_tickets;
+                printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
+                printf("Total refund: %d", 800 * cancel_tickets);
+            }
+            else
+            {
+                printf("\nYou dont have any tickets to cancel\n");
+            }
         }
-        else
+        else if (bus_seat_type == 2)
         {
-            printf("\nYou dont have any tickets to cancel\n");
+            if (bus_capacity_sitting[0] < 50)
+            {
+                printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                scanf("%d", &cancel_tickets);
+                bus_capacity_sitting[0] = bus_capacity_sitting[0] + cancel_tickets;
+                printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
+                printf("Total refund: %d", 400 * cancel_tickets);
+            }
+            else
+            {
+                printf("\nYou dont have any tickets to cancel\n");
+            }
         }
-    }
-    else if(bus_seat_type==2)
-    {
-        if (bus_capacity_sitting[0] < 50)
-        {
-            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-            scanf("%d", &cancel_tickets);
-            bus_capacity_sitting[0] = bus_capacity_sitting[0] + cancel_tickets;
-            printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
-            printf("Total refund: %d",400*cancel_tickets);
-
-        }
-        else
-        {
-            printf("\nYou dont have any tickets to cancel\n");
-        }
-    }
     }
     else if (bus_choise == 222)
     {
         printf("\n1.Sleeper Seats- (FARE - 800)\n");
         printf("2.Sitting Seats- (FARE - 400)\n");
         printf("Please enter your choice:  ");
-        scanf("%d",&bus_seat_type);
-        if(bus_seat_type==1)
+        scanf("%d", &bus_seat_type);
+        if (bus_seat_type == 1)
         {
-        if (bus_capacity_sleeper[1] < 50)
-        {
-            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-            scanf("%d", &cancel_tickets);
-            bus_capacity_sleeper[1] = bus_capacity_sleeper[1] + cancel_tickets;
-            printf("\nYour %d Tickets are Cancelled on Bus Number 222", cancel_tickets);
-            printf("Total refund: %d",800*cancel_tickets);
+            if (bus_capacity_sleeper[1] < 50)
+            {
+                printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                scanf("%d", &cancel_tickets);
+                bus_capacity_sleeper[1] = bus_capacity_sleeper[1] + cancel_tickets;
+                printf("\nYour %d Tickets are Cancelled on Bus Number 222", cancel_tickets);
+                printf("Total refund: %d", 800 * cancel_tickets);
+            }
+            else
+            {
+                printf("You dont have any tickets to cancel");
+            }
         }
-        else
+        else if (bus_seat_type == 2)
         {
-            printf("You dont have any tickets to cancel");
+            if (bus_capacity_sitting[1] < 50)
+            {
+                printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                scanf("%d", &cancel_tickets);
+                bus_capacity_sitting[1] = bus_capacity_sitting[1] + cancel_tickets;
+                printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
+                printf("Total refund: %d", 400 * cancel_tickets);
+            }
+            else
+            {
+                printf("\nYou dont have any tickets to cancel\n");
+            }
         }
-    }
-    else if(bus_seat_type==2)
-    {
-        if (bus_capacity_sitting[1] < 50)
-        {
-            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-            scanf("%d", &cancel_tickets);
-            bus_capacity_sitting[1] = bus_capacity_sitting[1] + cancel_tickets;
-            printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
-            printf("Total refund: %d",400*cancel_tickets);
-
-        }
-        else
-        {
-            printf("\nYou dont have any tickets to cancel\n");
-        }
-
-    }
     }
     else if (bus_choise == 333)
     {
         printf("\n1.Sleeper Seats- (FARE - 800)\n");
         printf("2.Sitting Seats- (FARE - 400)\n");
         printf("Please enter your choice:  ");
-        scanf("%d",&bus_seat_type);
-        if(bus_seat_type==1)
+        scanf("%d", &bus_seat_type);
+        if (bus_seat_type == 1)
         {
-        if (bus_capacity_sleeper[2] < 50)
-        {
-            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-            scanf("%d", &cancel_tickets);
-            bus_capacity_sleeper[2] = bus_capacity_sleeper[2] + cancel_tickets;
-            printf("\nYour %d Tickets are Cancelled on Bus Number 333", cancel_tickets);
-            printf("Total refund: %d",800*cancel_tickets);
+            if (bus_capacity_sleeper[2] < 50)
+            {
+                printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                scanf("%d", &cancel_tickets);
+                bus_capacity_sleeper[2] = bus_capacity_sleeper[2] + cancel_tickets;
+                printf("\nYour %d Tickets are Cancelled on Bus Number 333", cancel_tickets);
+                printf("Total refund: %d", 800 * cancel_tickets);
+            }
+            else
+            {
+                printf("You dont have any tickets to cancel");
+            }
         }
-        else
+        else if (bus_seat_type == 2)
         {
-            printf("You dont have any tickets to cancel");
+            if (bus_capacity_sitting[2] < 50)
+            {
+                printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
+                scanf("%d", &cancel_tickets);
+                bus_capacity_sitting[2] = bus_capacity_sitting[2] + cancel_tickets;
+                printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
+                printf("Total refund: %d", 400 * cancel_tickets);
+            }
+            else
+            {
+                printf("\nYou dont have any tickets to cancel\n");
+            }
         }
-    }
-    else if(bus_seat_type==2)
-    {
-        if (bus_capacity_sitting[2] < 50)
-        {
-            printf("\nPlease Enter Number Of Tickets You Want to Cancel: ");
-            scanf("%d", &cancel_tickets);
-            bus_capacity_sitting[2] = bus_capacity_sitting[2] + cancel_tickets;
-            printf("\nYour %d Tickets are Cancelled on Bus Number 111\n", cancel_tickets);
-            printf("Total refund: %d",400*cancel_tickets);
-
-        }
-        else
-        {
-            printf("\nYou dont have any tickets to cancel\n");
-        }
-
-    }
     }
     else
     {
@@ -387,15 +378,15 @@ int main()
                             user_menu_choise = User_Menu(user_menu_choise);
                             if (user_menu_choise == 1)
                             {
-                                Ticket_Booking(bus_choise, bus_capacity_sleeper, book_tickets, bus_seat_type,bus_capacity_sitting);
+                                Ticket_Booking(bus_choise, bus_capacity_sleeper, book_tickets, bus_seat_type, bus_capacity_sitting);
                             }
                             else if (user_menu_choise == 2)
                             {
-                                Ticket_Cancellation(bus_choise,bus_capacity_sleeper,cancel_tickets,bus_seat_type,bus_capacity_sitting);
+                                Ticket_Cancellation(bus_choise, bus_capacity_sleeper, cancel_tickets, bus_seat_type, bus_capacity_sitting);
                             }
                             else if (user_menu_choise == 3)
                             {
-                                Bus_Status(bus_choise, bus_capacity_sleeper , bus_capacity_sitting);
+                                Bus_Status(bus_choise, bus_capacity_sleeper, bus_capacity_sitting);
                             }
                             else if (user_menu_choise == 4)
                             {
