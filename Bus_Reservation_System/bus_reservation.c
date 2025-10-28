@@ -73,6 +73,10 @@ int Ticket_Booking(int bus_choise, int bus_capacity_sleeper[], int book_tickets,
                 printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n", book_tickets);
             }
         }
+        else
+        {
+            printf("\n INVALID CHOISE !");
+        }
     }
     else if (bus_choise == 222)
     {
@@ -110,6 +114,10 @@ int Ticket_Booking(int bus_choise, int bus_capacity_sleeper[], int book_tickets,
                 printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n", book_tickets);
             }
         }
+        else
+        {
+            printf("\n INVALID CHOISE !");
+        }
     }
     else if (bus_choise == 333)
     {
@@ -146,6 +154,10 @@ int Ticket_Booking(int bus_choise, int bus_capacity_sleeper[], int book_tickets,
             {
                 printf("\n%d tickets are not available on bus 111, Please check the bus status and try again\n", book_tickets);
             }
+        }
+        else
+        {
+            printf("\n INVALID CHOISE !");
         }
     }
     else
@@ -193,6 +205,10 @@ int Ticket_Cancellation(int bus_choise, int bus_capacity_sleeper[], int cancel_t
                 printf("\nYou dont have any tickets to cancel\n");
             }
         }
+        else
+        {
+            printf("\n INVALID CHOISE !");
+        }
     }
     else if (bus_choise == 222)
     {
@@ -230,6 +246,10 @@ int Ticket_Cancellation(int bus_choise, int bus_capacity_sleeper[], int cancel_t
                 printf("\nYou dont have any tickets to cancel\n");
             }
         }
+        else
+        {
+            printf("\n INVALID CHOISE !");
+        }
     }
     else if (bus_choise == 333)
     {
@@ -266,6 +286,10 @@ int Ticket_Cancellation(int bus_choise, int bus_capacity_sleeper[], int cancel_t
             {
                 printf("\nYou dont have any tickets to cancel\n");
             }
+        }
+        else
+        {
+            printf("\n INVALID CHOISE !");
         }
     }
     else
